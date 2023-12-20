@@ -31,6 +31,7 @@ export class UserLoginComponent implements OnInit{
           this.authService.userLogin(this.model.username, this.model.password).subscribe(
             (response) => {
               this.authService.setAuthToken(response.token);
+              localStorage.setItem("userId",response.userId);
               // Use setTimeout to simulate the spinner for 2 seconds
               setTimeout(() => {
                 this.router.navigate(['user/dashboard']);

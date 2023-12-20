@@ -7,6 +7,8 @@ import { UserNavbarComponent } from './user-navbar/user-navbar.component';
 import { UserPlaceCardComponent } from './user-place-card/user-place-card.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
 import { UserBookingComponent } from './user-booking/user-booking.component';
+import { UserFeedbackComponent } from './user-feedback/user-feedback.component';
+import { UserBookingDetailComponent } from './user-booking-detail/user-booking-detail.component';
 
 
 
@@ -20,6 +22,8 @@ import { UserBookingComponent } from './user-booking/user-booking.component';
     UserPlaceCardComponent,
     UserRegisterComponent,
     UserBookingComponent,
+    UserFeedbackComponent,
+    UserBookingDetailComponent,
 
   ],
   imports: [

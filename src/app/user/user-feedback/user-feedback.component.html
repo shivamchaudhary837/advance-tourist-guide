@@ -1,0 +1,31 @@
+<app-user-navbar>
+
+</app-user-navbar>
+<div class='fb-form'>
+  
+    <form action='#' class='form-group'>
+      <h2>Tell us what you think</h2>
+      <!-- <input class='form-control' placeholder='Email' type='text'> -->
+     
+
+      <div class="mb-2 form-floating">
+        <select class="form-select" id="dropdown" 
+        name="dropdown"  [(ngModel)]="selectedPlace" required>
+          
+        <option *ngFor="let item of placeList" [value]="item.name">{{item.name}}</option>
+        </select>
+        <label for="dropdown">Select Place</label>
+      </div>
+      <textarea class='form-control' id='fb-comment' name='comment'
+      placeholder='Tell us what you think' [(ngModel)]="FeedbackData.comment"></textarea>
+
+        <div class="form-floating">
+          <input [(ngModel)]="FeedbackData.rating"  class='form-control' 
+            type="number"  name="rating"  required/>
+          <label for="rating">Enter Rating</label>
+      </div>
+      <button class='form-control btn btn-primary' type='submit' (click)="OnSubmit()">
+        Submit
+      </button>
+    </form>
+  </div> 

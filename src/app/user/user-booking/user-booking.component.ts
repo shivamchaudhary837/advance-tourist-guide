@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../user.service';
 
 @Component({
@@ -8,10 +8,12 @@ import { UserService } from '../user.service';
   styleUrls: ['./user-booking.component.css']
 })
 export class UserBookingComponent implements OnInit{
+
       
      tag:string='';
      placeList:any[]=[]
-     constructor(private route:ActivatedRoute,private userService:UserService){
+     constructor(private route:ActivatedRoute,private userService:UserService,
+      private router:Router){
 
      }
 
@@ -32,5 +34,10 @@ export class UserBookingComponent implements OnInit{
                   this.placeList=data;
                   console.log("Got data backend by preference",this.placeList)
            })
+      }
+
+
+      callUserBookingDetail(placeId: any) {
+         this.router.navigate(['user/booking/detail/',placeId])
       }
 }

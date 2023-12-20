@@ -20,6 +20,7 @@ export class AuthService {
    }
 
   logout(): void {
+    localStorage.removeItem("userId");
     localStorage.removeItem('auth_token');
     this.isAuthenticated = false;
   }

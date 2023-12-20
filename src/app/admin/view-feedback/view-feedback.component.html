@@ -1,1 +1,19 @@
-<p>view feedback</p>
+<div class="table-container">
+    <table class="table table-striped">
+        <thead class="bg-danger ">
+          <tr class=" ">
+            
+            <th scope="col">User Name</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of feedbackList">
+            <td>{{data.userId}}</td>
+            <td>{{data.rating}}</td>
+            <td>{{data.comment}}</td>
+          </tr>
+        </tbody>
+      </table>
+    
+    </div>

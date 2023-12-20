@@ -25,7 +25,7 @@ export class AdminLoginComponent implements OnInit{
     this.adminService.loginAdmin(this.model).subscribe(
       (response) => {
         console.log("Success. Return Data:", response);
-  
+        
         // Check the status code
         if (response.status === 202) {
           console.log("Login success");

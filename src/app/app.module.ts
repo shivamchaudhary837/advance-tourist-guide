@@ -11,6 +11,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ErrorHandleComponent } from './error-handle/error-handle.component';
 import { FooterComponent } from './footer/footer.component';
 import { ToastComponent } from './toast/toast/toast.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,

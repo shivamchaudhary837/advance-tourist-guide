@@ -9,9 +9,10 @@ import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.com
 import { AuthGuard } from './guard/auth.guard';
 import { ErrorHandleComponent } from './error-handle/error-handle.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
-import { FeedbackComponent } from './home/feedback/feedback.component';
 import { AboutUsComponent } from './home/about-us/about-us.component';
 import { UserBookingComponent } from './user/user-booking/user-booking.component';
+import { UserFeedbackComponent } from './user/user-feedback/user-feedback.component';
+import { UserBookingDetailComponent } from './user/user-booking-detail/user-booking-detail.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -20,12 +21,12 @@ const routes: Routes = [
   // {path:'user/dashboard',component:UserDashboardComponent,canActivate:[AuthGuard]},
   {path:'user/dashboard',component:UserDashboardComponent,canActivate:[AuthGuard]},
   {path:'register',component:UserRegisterComponent},
-     
+  {path:'user/booking/detail/:placeId',component:UserBookingDetailComponent},
   {
     path: 'admin',
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
   },
-  {path:'feedback',component:FeedbackComponent},
+  {path:'feedback',component:UserFeedbackComponent},
   {path:'aboutus',component:AboutUsComponent},
    {path:'**',component:ErrorHandleComponent},
    

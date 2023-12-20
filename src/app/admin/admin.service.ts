@@ -9,6 +9,8 @@ import { HttpClient } from '@angular/common/http';
 export class AdminService {
    apiUrl:string='http://localhost:9097/'
    apiUrlAdmin:string='http://localhost:9091/api/admins/'
+   apiUrlFeedback:string='http://localhost:9993/api/feedback/';
+
   constructor(private http:HttpClient) { }
 
     getPlace():Observable<Place[]>{
@@ -31,4 +33,7 @@ export class AdminService {
       return this.http.post(this.apiUrlAdmin+'login',data,{ observe: 'response' });
     }
 
+    getAllFeedback():Observable<any[]>{
+      return this.http.get<any[]>(this.apiUrlFeedback+'all')
+    }
 }

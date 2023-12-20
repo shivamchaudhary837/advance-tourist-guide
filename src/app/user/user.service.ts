@@ -8,8 +8,9 @@ import { Place } from '../modal/place';
   providedIn: 'root'
 })
 export class UserService {
-  apiUrl='http://localhost:9999/api/users/'
-  apiUrlPlace="http://localhost:9097/place/"
+  apiUrl='http://localhost:9999/api/users/';
+  apiUrlPlace="http://localhost:9097/place/";
+  apiUrlFeedback="http://localhost:9993/api/feedback/"
   constructor(private http:HttpClient) { }
 
   getAllUsers():Observable<any[]>{
@@ -17,11 +18,11 @@ export class UserService {
   }
 
   getPlaces():Observable<Place[]>{
-    return this.http.get<Place[]>(this.apiUrl+'admin/viewplace')
+    return this.http.get<Place[]>(this.apiUrlPlace+'viewplace')
   }
 
   registerUser(data :any){
-      return this.http.post(this.apiUrl+'signup',data);
+      return this.http.post(this.apiUrl+'signup',data,{observe:"response"});
   }
 
    getAllTags():Observable<any[]>{
@@ -32,4 +33,14 @@ export class UserService {
 
        return this.http.get<any[]>(this.apiUrlPlace+'tag/'+tag);
     }
+
+    addFeedback(data:any){
+      
+      return this.http.post(this.apiUrlFeedback+'add',data);
+    }
+
+    getPlaceById(placeId:number){
+      return this.http.get(this.apiUrlPlace+placeId);
+    }
+
 }

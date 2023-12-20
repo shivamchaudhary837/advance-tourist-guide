@@ -55,8 +55,8 @@ export class UserDashboardComponent implements OnInit{
         console.log('Selected preference:', this.formData.preference);
       }
 
-      logOut() {
-        this.authService.logout();
-        this.router.navigate(['/']);
-      }
+      // logOut() {
+      //   this.authService.logout();
+      //   this.router.navigate(['/']);
+      // }
 }

@@ -50,7 +50,8 @@ export class AddPlaceComponent implements OnInit {
       onFileSelected(event: any): void {
         const file = event.target.files[0];
        
-        this.place.image = file.name;  
+        this.place.image = file.name; 
+        
       }
       onSubmit() {
           
