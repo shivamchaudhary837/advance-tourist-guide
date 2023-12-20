@@ -201,3 +201,7 @@ font-size: 1.2rem; /* Adjust the font size of the button */
 padding: 10px; /* Adjust the padding of the button */
 border-radius: 5px; /* Add border radius to the button */
 }
+
+.cursor-pointer {
+  cursor: pointer;
+}

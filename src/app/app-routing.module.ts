@@ -15,10 +15,10 @@ import { UserBookingComponent } from './user/user-booking/user-booking.component
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
-  {path:'user/booking/:tag',component:UserBookingComponent},
+  {path:'user/booking/:tag',component:UserBookingComponent,canActivate:[AuthGuard]},
   {path:'login',component:UserLoginComponent},
   // {path:'user/dashboard',component:UserDashboardComponent,canActivate:[AuthGuard]},
-  {path:'user/dashboard',component:UserDashboardComponent},
+  {path:'user/dashboard',component:UserDashboardComponent,canActivate:[AuthGuard]},
   {path:'register',component:UserRegisterComponent},
      
   {

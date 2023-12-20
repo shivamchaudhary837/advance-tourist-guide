@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/authentication/auth.service';
 import { ToastComponent } from 'src/app/toast/toast/toast.component';
@@ -8,31 +8,43 @@ import { ToastComponent } from 'src/app/toast/toast/toast.component';
   templateUrl: './user-login.component.html',
   styleUrls: ['./user-login.component.css']
 })
-export class UserLoginComponent {
+export class UserLoginComponent implements OnInit{
 
         model = { username: '', password: '' };
         errorMessage: string = '';
+        loading: boolean = false;
 
        constructor(private authService:AuthService,private router:Router){
 
        }
+        ngOnInit(): void {
+          
+        }
 
       
 
-  onSubmit(): void {
-    console.log("user login data ",this.model);
-    
-    this.authService.userLogin(this.model.username, this.model.password).subscribe(
-      (response) => {
-        this.authService.setAuthToken(response.token);
-        this.router.navigate(['user/dashboard']);
-        console.log("User logged in successfully")
-      },
-      (error) => {
-        this.errorMessage = 'Invalid username or password';
-      }
-    );
-  }
+        onSubmit(): void {
+          console.log("user login data ", this.model);
+          
+          this.loading = true; // Set loading to true when starting the request
+      
+          this.authService.userLogin(this.model.username, this.model.password).subscribe(
+            (response) => {
+              this.authService.setAuthToken(response.token);
+              // Use setTimeout to simulate the spinner for 2 seconds
+              setTimeout(() => {
+                this.router.navigate(['user/dashboard']);
+                this.loading = false; // Set loading to false after navigation
+                console.log("User logged in successfully");
+              }, 1000);
+            },
+            (error) => {
+              this.errorMessage = 'Invalid username or password';
+              window.confirm("Invalid username or password");
+              this.loading = false; // Set loading to false in case of an error
+            }
+          );
+        }
 
 
 }
