@@ -49,18 +49,19 @@ export class AddPlaceComponent implements OnInit {
       }
       onFileSelected(event: any): void {
         const file = event.target.files[0];
-       
+        const fileName=file.name.split(".");
+        console.log("########## filename",fileName)
         this.place.image = file.name; 
         
       }
       onSubmit() {
           
-           //window.confirm("place is added")
            console.log("data ",this.place);
+
            this.adminService.addPlace(this.place).subscribe(
             () => {
               console.log('Place added successfully!');
-              
+              window.alert("Place Added Successfully");
             },
             (error) => {
               // Handle error if needed

@@ -16,3 +16,7 @@
     font-size: 12px;
     margin-top: 4px;
   }
+
+  .containerx{
+    background-image: url('../../../assets/images/header-bg.jpg');
+  }

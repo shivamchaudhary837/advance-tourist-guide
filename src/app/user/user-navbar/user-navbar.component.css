@@ -19,10 +19,7 @@
   /* banner area end */
   
   /* Navbar background and text color */
-  .navbar {
-    background-color: black; /* Change this to your desired background color */
-    color: white; /* Change this to your desired text color */
-  }
+ 
   
   /* Navbar brand link styles */
   .navbar-brand {
@@ -147,7 +144,7 @@
     position: absolute;
     bottom: 20px;
     left: 20px;
-    background: rgba(0, 0, 0, 0.7); /* Background color for caption */
+    background: rgba(0, 0, 0, 0.7); 
     padding: 10px 15px;
     border-radius: 5px;
   }

@@ -7,6 +7,7 @@
  }
  .container{
     transition: transform .2s;
+    height: 400px;
  }
  .container:hover{
     transform: scale(1.05);
@@ -20,13 +21,11 @@
     
     overflow: hidden;
   }
- .container:hover{
-    transform: scale(1.05);
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    cursor: pointer;
-   
- }
  
  p{
     font-size: 14px;
+ }
+ .booking{
+   background-image: url('../../../assets/images/header-bg.jpg');
+   background-image: no-repeat;
  }
