@@ -26,7 +26,7 @@ export class UserLoginComponent implements OnInit{
         onSubmit(): void {
           console.log("user login data ", this.model);
           
-          this.loading = true; // Set loading to true when starting the request
+           // Set loading to true when starting the request
       
           this.authService.userLogin(this.model.username, this.model.password).subscribe(
             (response) => {
@@ -34,7 +34,7 @@ export class UserLoginComponent implements OnInit{
               localStorage.setItem("userId",response.userId);
               // Use setTimeout to simulate the spinner for 2 seconds
               setTimeout(() => {
-               
+                this.loading = true;
                 this.router.navigate(['user/dashboard']);
                 this.loading = false; // Set loading to false after navigation
                 console.log("User logged in successfully");
