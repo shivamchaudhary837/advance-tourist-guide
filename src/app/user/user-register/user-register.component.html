@@ -32,7 +32,8 @@
 
                     <div class="form-floating">
                       <input [(ngModel)]="signUpData.name" type="text" id="formName"
-                      class="form-control" name="name" required placeholder="Your Name">
+                      class="form-control" name="name" required placeholder="Your Name"
+                      autocomplete="username">
                       <label class="form-label" for="formName">Your Name</label>
                       <div *ngIf="signupForm.controls['name'].errors?.['required'] && 
                       signupForm.controls['name'].touched" class="text-danger">
@@ -45,7 +46,7 @@
                   <div class="form-floating mb-3">
                     <input [(ngModel)]="signUpData.email" type="email" class="form-control"
                     id="floatingInput" placeholder="name@example.com" name="email" required 
-                    email #email="ngModel">
+                    email #email="ngModel" autocomplete="email">
                     <label for="floatingInput">Email address</label>
                     <div *ngIf="email.touched && email.invalid" class="text-danger">
                       <div *ngIf="email.errors?.['required']">Email is required</div>
@@ -55,7 +56,8 @@
                   <div class="form-floating mb-3">
                   <input [(ngModel)]="signUpData.password" type="password" 
                   class="form-control" id="floatingPassword"
-                    placeholder="Password" name="password" required minlength="8" #password="ngModel">
+                    placeholder="Password" name="password" 
+                    required minlength="8" #password="ngModel" autocomplete="new-password">
                   <label for="floatingPassword">Password</label>
                   <div *ngIf="password.touched && password.invalid" class="text-danger">
                     <div *ngIf="password.errors?.['required']">Password is required</div>
@@ -66,7 +68,7 @@
                 <div class="form-floating mb-3">
                   <input [(ngModel)]="signUpData.repeatPassword" type="password"
                   class="form-control" id="floatingPassword" name="repeatPassword" required 
-                  #repeatPassword="ngModel" placeholder="Password">
+                  #repeatPassword="ngModel" placeholder="Password" autocomplete="new-password">
                   <label for="floatingPassword">Repeat your password</label>
                   <div *ngIf="repeatPassword.touched && repeatPassword.invalid" class="text-danger">
                     <div *ngIf="repeatPassword.errors?.['required']">Repeat Password is required</div>

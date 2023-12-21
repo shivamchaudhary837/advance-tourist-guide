@@ -18,7 +18,7 @@
                       <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
                         <input [(ngModel)]="signUpData.name" type="text" id="form3Example1c" 
-                        class="form-control" name="name" required/>
+                        class="form-control" name="name" required autocomplete="name"/>
                         <label class="form-label" for="form3Example1c">Your Name</label>
                         <div *ngIf="signupForm.controls['name'].errors?.['required'] && 
                       signupForm.controls['name'].touched" class="text-danger">
@@ -30,7 +30,7 @@
                     <div class="d-flex flex-row align-items-center mb-4">
                       <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
-                        <input [(ngModel)]="signUpData.email" type="email" 
+                        <input [(ngModel)]="signUpData.email" type="email" autocomplete="password"
                         id="form3Example3c" class="form-control" name="email" #email="ngModel" required/>
                         <label class="form-label" for="form3Example3c">Your Email</label>
                         <div *ngIf="email.touched && email.invalid" class="text-danger">
@@ -44,7 +44,7 @@
                       <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
                         <input [(ngModel)]="signUpData.password" type="password" 
-                        id="form3Example4c" class="form-control" name="password"  #password="ngModel" required/>
+                        id="form3Example4c" class="form-control" autocomplete="new-password" name="password"  #password="ngModel" required/>
                         <label class="form-label" for="form3Example4c">Password</label>
                         <div *ngIf="password.touched && password.invalid" class="text-danger">
                           <div *ngIf="password.errors?.['required']">Password is required</div>
@@ -57,7 +57,7 @@
                       <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
                         <input [(ngModel)]="signUpData.repeatPassword" type="password" 
-                        id="form3Example4cd" class="form-control" name="repeat-password" required 
+                        id="form3Example4cd" class="form-control" autocomplete="new-password" name="repeat-password" required 
                         #repeatPassword="ngModel"/>
                         <label class="form-label" for="form3Example4cd">Repeat your password</label>
                         <div *ngIf="repeatPassword.touched && repeatPassword.invalid" class="text-danger">

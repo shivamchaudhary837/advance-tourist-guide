@@ -42,7 +42,8 @@
 
                   <div class="form-floating mb-3  ">
                     <input [(ngModel)]="model.username" type="email" class="form-control" 
-                    id="floatingInput" placeholder="name@example.com" name="email" #email="ngModel" required>
+                    id="floatingInput" placeholder="name@example.com" name="email" 
+                    #email="ngModel" required autocomplete="username">
                     <label  for="floatingInput">Email address</label>
                     <div *ngIf="email.touched && email.invalid" class="text-danger">
                       <div *ngIf="email.errors?.['required']">Email is required</div>
@@ -52,7 +53,7 @@
 
                   <div class="form-floating mb-3 ">
                     <input [(ngModel)]="model.password" type="password" class="form-control " 
-                    id="floatingPassword" placeholder="Password" name="password" #password="ngModel" required>
+                    id="floatingPassword" autocomplete="new-password" placeholder="Password" name="password" #password="ngModel" required>
                     <label for="floatingPassword">Password</label>
                     <div *ngIf="password.touched && password.invalid" class="text-danger">
                       <div *ngIf="password.errors?.['required']">Password is required</div>

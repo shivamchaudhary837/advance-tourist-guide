@@ -4,10 +4,12 @@
     height: 21.875rem;
     transition: transform .2s;
     border-radius: 1rem;
+    
  }
  .container{
     transition: transform .2s;
     height: 400px;
+ 
  }
  .container:hover{
     transform: scale(1.05);
@@ -28,4 +30,6 @@
  .booking{
    background-image: url('../../../assets/images/header-bg.jpg');
    background-image: no-repeat;
+   background-size: cover;
+   height: 100vh;
  }
