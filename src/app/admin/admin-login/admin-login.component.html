@@ -42,15 +42,22 @@
 
                   <div class="form-floating mb-3  ">
                     <input [(ngModel)]="model.username" type="email" class="form-control" 
-                    id="floatingInput" placeholder="name@example.com" name="email">
+                    id="floatingInput" placeholder="name@example.com" name="email" #email="ngModel" required>
                     <label  for="floatingInput">Email address</label>
-                    
+                    <div *ngIf="email.touched && email.invalid" class="text-danger">
+                      <div *ngIf="email.errors?.['required']">Email is required</div>
+                      <div *ngIf="email.errors?.['email']">Invalid email format</div>
+                    </div>
                   </div>
 
                   <div class="form-floating mb-3 ">
                     <input [(ngModel)]="model.password" type="password" class="form-control " 
-                    id="floatingPassword" placeholder="Password" name="password">
+                    id="floatingPassword" placeholder="Password" name="password" #password="ngModel" required>
                     <label for="floatingPassword">Password</label>
+                    <div *ngIf="password.touched && password.invalid" class="text-danger">
+                      <div *ngIf="password.errors?.['required']">Password is required</div>
+                      <div *ngIf="password.errors?.['minlength']">Password should be at least 8 characters</div>
+                    </div>
                   </div>
 
                   <div class="pt-1 mb-4 d-grid">

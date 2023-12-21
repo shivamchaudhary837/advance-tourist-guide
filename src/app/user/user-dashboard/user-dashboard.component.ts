@@ -23,11 +23,7 @@ export class UserDashboardComponent implements OnInit{
        
 
        ngOnInit(): void {
-        // const data=localStorage.getItem('auth_token');
-        // console.log("Token  curr",data)
-        //    this.userService.getPlaces().subscribe(data => {
-        //        this.placeList=data
-        //    })
+       
 
            this.getTagsFromPlace();
            console.log("authenticated ",this.authService.isAuthenticatedUser())
@@ -36,7 +32,6 @@ export class UserDashboardComponent implements OnInit{
       getTagsFromPlace() {
          this.userService.getAllTags().subscribe(data=>{
           this.preferenceList=data
-          //console.log("Data pref list",data)
          })
       }
 
@@ -55,8 +50,8 @@ export class UserDashboardComponent implements OnInit{
         console.log('Selected preference:', this.formData.preference);
       }
 
-      // logOut() {
-      //   this.authService.logout();
-      //   this.router.navigate(['/']);
-      // }
+      logOut() {
+        this.authService.logout();
+        this.router.navigate(['/']);
+      }
 }

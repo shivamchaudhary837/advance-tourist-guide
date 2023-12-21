@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 import { AuthService } from 'src/app/authentication/auth.service';
 import { ToastComponent } from 'src/app/toast/toast/toast.component';
 
@@ -34,6 +34,7 @@ export class UserLoginComponent implements OnInit{
               localStorage.setItem("userId",response.userId);
               // Use setTimeout to simulate the spinner for 2 seconds
               setTimeout(() => {
+               
                 this.router.navigate(['user/dashboard']);
                 this.loading = false; // Set loading to false after navigation
                 console.log("User logged in successfully");

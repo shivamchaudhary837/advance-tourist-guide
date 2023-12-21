@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AdminService } from '../admin.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-register',
@@ -9,7 +10,7 @@ import { AdminService } from '../admin.service';
 })
 export class AdminRegisterComponent {
 
-      constructor(private adminService:AdminService){
+      constructor(private adminService:AdminService,private router:Router){
 
       }
 
@@ -30,6 +31,8 @@ export class AdminRegisterComponent {
                 this.adminService.registerAdmin(this.signUpData).subscribe(
                   ()=>{
                       console.log("Admin Register successfully")
+                      window.alert("Admin Register successfully");
+                      this.router.navigate(['admin/login']);
                   }
                 )
           }

@@ -42,7 +42,7 @@ export class UserRegisterComponent {
             }, 1000);
          },
          (error)=>{
-          window.alert("Something went Wrong "+error)
+          window.alert("Something went Wrong ")
          }
        );
 

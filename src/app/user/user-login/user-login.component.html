@@ -9,13 +9,6 @@
            <span class="text-white lnr lnr-menu"></span>
          </button>
   
-         <!-- <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
-           <ul class="navbar-nav">
-              
-               <li> <a class="nav-link js-scroll-trigger" href="/user/dashboard">Back</a></li>
-              
-           </ul>
-         </div>             -->
    </div>
  </nav>
 <section class="">
@@ -38,7 +31,8 @@
                   <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
                  
                   <div class="form-floating mb-3">
-                    <input [(ngModel)]="model.username" type="email" class="form-control" id="floatingInput"
+                    <input [(ngModel)]="model.username" type="email" 
+                    class="form-control" id="floatingInput"
                       placeholder="name@example.com" name="email" required email #email="ngModel">
                     <label for="floatingInput">Email address</label>
                     <div *ngIf="email.touched && email.invalid" class="text-danger">
@@ -48,8 +42,10 @@
                   </div>
                  
                   <div class="form-floating mb-3">
-                    <input [(ngModel)]="model.password" type="password" class="form-control" id="floatingPassword"
-                      placeholder="Password" name="password" required minlength="8" #password="ngModel">
+                    <input [(ngModel)]="model.password" type="password" 
+                    class="form-control" id="floatingPassword"
+                      placeholder="Password" name="password" required minlength="8" 
+                      #password="ngModel" required>
                     <label for="floatingPassword">Password</label>
                     <div *ngIf="password.touched && password.invalid" class="text-danger">
                       <div *ngIf="password.errors?.['required']">Password is required</div>
